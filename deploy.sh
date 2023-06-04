@@ -1,0 +1,1 @@
+docker build . -t mybot:latest && docker run --name mybot --rm -d -it mybot:latest
