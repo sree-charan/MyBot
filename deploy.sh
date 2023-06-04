@@ -1,1 +1,1 @@
-docker build . -t mybot:latest && docker run --name mybot --rm -d -it docker build . -t sreecharanreddy/project:mybot
+docker build . -t mybot:latest && docker run --name mybot --rm -d -it mybot:latest
