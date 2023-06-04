@@ -15,7 +15,7 @@ const trigger = async (msg: string, options: WAWebJS.MessageSendOptions, message
     const weatherResultSelector = "#wob_wc";
     const metricSelector = "#wob_wc > div.UQt4rd > div.Ab33Nc > div > div.vk_bk.wob-unit > a:nth-child(4) > span";
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     try {
         const page = await browser.newPage();
         await page.goto(`https://www.google.com/search?q=${msg} weather`);

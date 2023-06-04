@@ -19,7 +19,7 @@ const trigger = async (message: WAWebJS.Message, options: WAWebJS.MessageSendOpt
     const firstImgSelector = "#islrg > div.islrc > div:nth-child(2) > a.wXeWr.islib.nfEiy";
     const imgSelector = "#Sva75c > div.DyeYj > div > div.dFMRD > div.pxAole > div.tvh9oe.BIB1wf > c-wiz > div.nIWXKc.JgfpDb > div.OUZ5W > div.zjoqD > div.qdnLaf.isv-id.b0vFpe > div > a > img";
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     try {
         const page = await browser.newPage();
         await page.goto(`https://www.google.com/search?q=${search}&tbm=isch&safe=active`);

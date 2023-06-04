@@ -12,7 +12,7 @@ const trigger = async (message: WAWebJS.Message, options: WAWebJS.MessageSendOpt
     const authorPath = '//*[@id="mf-qotd"]/div/div[2]/table/tbody/tr[1]/td/table/tbody/tr/td[3]/table/tbody/tr[2]/td';
 
     const error = "Something went wrong, please try again later";
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     try {
         const page = await browser.newPage();
         await page.goto("https://en.wikiquote.org/wiki/Main_Page");

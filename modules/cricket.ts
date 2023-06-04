@@ -13,7 +13,7 @@ const process = async (message: WAWebJS.Message, options: WAWebJS.MessageSendOpt
 const trigger = async (msg: string, message: WAWebJS.Message, options: WAWebJS.MessageSendOptions) => {
     const jsControllerSelector = ".imso-hov.imso-mh.PZPZlf";
     const outputJSSelector = "div[jsname='RcgsAb']";
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     try {
         const query = `live cricket score ${msg}`;
         const page = await browser.newPage();

@@ -27,7 +27,7 @@ const process = async (message: WAWebJS.Message, _client: WAWebJS.Client, option
 
 const trigger = async (keyword: string, location: string) => {
     const resultListSelector = ".jobs-search__results-list li";
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     try {
         const page = await browser.newPage();
         await page.goto(`https://in.linkedin.com/jobs/search?keywords=${keyword}&location=${location}`);
