@@ -16,7 +16,7 @@ export const yt = async (message: WAWebJS.Message, options: WAWebJS.MessageSendO
         if (duration < 70) {
             return Send.url(message, options, videoUrl);
         }
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
         const page = await browser.newPage();
         await page.goto("https://tinyurl.com/app/");
         let selector = "#long-url";
